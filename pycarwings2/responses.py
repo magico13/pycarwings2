@@ -552,7 +552,7 @@ class CarwingsDrivingAnalysisResponse(CarwingsResponse):
 class CarwingsLatestBatteryStatusResponse(CarwingsResponse):
     def __init__(self, status):
         self.answer = status
-        if not status.has_key("BatteryStatusRecords"):
+        if not "BatteryStatusRecords" in status:
             return        
         CarwingsResponse.__init__(self, status["BatteryStatusRecords"])
 
